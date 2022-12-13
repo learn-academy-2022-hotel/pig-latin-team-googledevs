@@ -34,7 +34,15 @@ const App = () => {
       // ACTION ITEM: your Pig Latin logic goes here!
         let firstVowel = eachWord[0]
         let quIndicator = eachWord.search(/["qu"]/)
+        let yRule = eachWord.includes("y")
+        let noVowel = eachWord.includes("a") || eachWord.includes("e") || eachWord.includes("i") || eachWord.includes("o") || eachWord.includes("u")
+       let ySearch = eachWord.search(/["y"]/)
+        console.log(noVowel);
+        let highSlice = eachWord.slice(0, ySearch)
+        let lowSlice = eachWord.slice(ySearch)
+        let combinedSlice = lowSlice + highSlice
 
+        
 
         if (firstVowel === "a" || firstVowel ===  "e"|| firstVowel === "i" || firstVowel === "o"|| firstVowel === "u"){
           return (`${eachWord}way`)
@@ -42,11 +50,16 @@ const App = () => {
           return eachWord.slice(2, )+ "quay"
         } else if (quIndicator === 1) {
           return eachWord.slice(3, )+ "squay"
-        }
+        } else if (yRule === true && noVowel === false ) {
+          return combinedSlice + "ay"
+        } 
 
         
+        
 
-
+        // else if (yRule === 2 && !eachWord.includes("a") || !eachWord.includes("e") ||!eachWord.includes("i") || !eachWord.includes("o") || !eachWord.includes("u")) {
+        //   return 'works'
+        // }
 
         // else {
         //   return ("error")
