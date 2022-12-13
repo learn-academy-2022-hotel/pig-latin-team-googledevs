@@ -33,11 +33,18 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
         let firstVowel = eachWord[0]
-
+        let quIndicator = eachWord.search(/["qu"]/)
 
 
         if (firstVowel === "a" || firstVowel ===  "e"|| firstVowel === "i" || firstVowel === "o"|| firstVowel === "u"){
-          return (`${eachWord}way`)}
+          return (`${eachWord}way`)
+        } else if (quIndicator === 0) {
+          return eachWord.slice(2, )+ "quay"
+        } else if (quIndicator === 1) {
+          return eachWord.slice(3, )+ "squay"
+        }
+
+        
 
 
 
@@ -66,8 +73,8 @@ const App = () => {
 
       // create if statement to get apple to return "appleway"
       // create if statements for apple through queen squeal fry
-// 
-
+// if a word starts qith qu its go squeal -> ealsquay queen-> eenquay
+    // use slice
 
 
 
