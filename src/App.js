@@ -41,7 +41,12 @@ const App = () => {
         let highSlice = eachWord.slice(0, ySearch)
         let lowSlice = eachWord.slice(ySearch)
         let combinedSlice = lowSlice + highSlice
-
+        
+        let firstVowelSearch = eachWord.search("o") 
+        //|| eachWord.search("e") || eachWord.search("i") || eachWord.search("o") || eachWord.search("u") 
+        let vSliceLow = eachWord.slice(0, firstVowelSearch)
+        let vSliceHigh = eachWord.slice(firstVowelSearch)
+        let consonantCombined = vSliceHigh + vSliceLow 
         
 
         if (firstVowel === "a" || firstVowel ===  "e"|| firstVowel === "i" || firstVowel === "o"|| firstVowel === "u"){
@@ -52,7 +57,9 @@ const App = () => {
           return eachWord.slice(3, )+ "squay"
         } else if (yRule === true && noVowel === false ) {
           return combinedSlice + "ay"
-        } 
+        } else {
+          return consonantCombined + "ay"
+        }
 
         
         
